@@ -1,12 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { 
+  useFonts, 
+  Jost_400Regular,
+  Jost_500Medium,
+  Jost_700Bold, 
+} from "@expo-google-fonts/jost"
+
+import { ThemeProvider } from 'styled-components/native';
+import theme from './src/styles';
+
+import Home from './src/Screens/Home';
+import Routes from './src/Routes/index.routes';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Jost_400Regular,
+    Jost_500Medium,
+    Jost_700Bold
+  });
+
+  if(!fontsLoaded){
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
   );
 }
 

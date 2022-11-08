@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    ".gitignore": true,
+    "yarn.lock": true,
+    "node_modules": true,
+    ".expo-shared": true,
+    "index.d.ts": true,
+    "app.json": true,
+    "assets": true
+  }
+}
