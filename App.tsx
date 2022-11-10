@@ -11,6 +11,7 @@ import theme from './src/styles';
 
 import Home from './src/Screens/Home';
 import Routes from './src/Routes/index.routes';
+import Loading from './src/Components/Loading';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,13 +20,9 @@ export default function App() {
     Jost_700Bold
   });
 
-  if(!fontsLoaded){
-    return null;
-  }
-
   return (
     <ThemeProvider theme={theme}>
-      <Routes />
+      { fontsLoaded ? <Routes /> : <Loading /> }
     </ThemeProvider>
   );
 }

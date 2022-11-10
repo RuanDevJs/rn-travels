@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    ".gitignore": true,
+    ".gitignore": false,
     "yarn.lock": true,
     "node_modules": true,
     ".expo-shared": true,
